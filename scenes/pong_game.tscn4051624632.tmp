@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bam5l041774ho"]
+
+[ext_resource type="Script" uid="uid://i0ubg3587yni" path="res://scripts/paddle.gd" id="1_n7qpn"]
+
+[sub_resource type="Gradient" id="Gradient_igji7"]
+offsets = PackedFloat32Array(0.32932693, 0.34375)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n7qpn"]
+gradient = SubResource("Gradient_igji7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7qpn"]
+
+[node name="Main" type="Node2D" unique_id=1905153716]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1824589432]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=70546830]
+position = Vector2(439, 370)
+texture = SubResource("GradientTexture2D_n7qpn")
+
+[node name="PaddleA" type="CharacterBody2D" parent="." unique_id=318658541]
+script = ExtResource("1_n7qpn")
+
+[node name="PaddleA" type="ColorRect" parent="PaddleA" unique_id=1104985322]
+offset_left = 20.0
+offset_top = 340.0
+offset_right = 45.0
+offset_bottom = 440.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaddleA" unique_id=1107805662]
+shape = SubResource("RectangleShape2D_n7qpn")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=141580701]
+script = ExtResource("1_n7qpn")
+
+[node name="PaddleB" type="ColorRect" parent="CharacterBody2D2" unique_id=1075827843]
+offset_left = 1233.0
+offset_top = 340.0
+offset_right = 1258.0
+offset_bottom = 440.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2" unique_id=357800829]
+shape = SubResource("RectangleShape2D_n7qpn")
