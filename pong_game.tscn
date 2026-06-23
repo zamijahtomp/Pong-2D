@@ -10,10 +10,6 @@
 [node name="Background" parent="." unique_id=1527327227 instance=ExtResource("5_j154r")]
 
 [node name="MainMenu" parent="." unique_id=201033564 instance=ExtResource("1_ajsfb")]
-offset_left = 562.0
-offset_top = 294.0
-offset_right = 562.0
-offset_bottom = 294.0
 
 [node name="2Player" parent="." unique_id=237172595 instance=ExtResource("2_kkmoc")]
 visible = false
