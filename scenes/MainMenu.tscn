@@ -42,7 +42,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("TitleContainer:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,21 +51,46 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_ow34m"]
 resource_name = "rotate"
-length = 2.0
+length = 4.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("TitleContainer:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.9333333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0]
+"values": [0.0, -0.17453292519943295, 0.0, 0.17453292519943295, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l72w3"]
@@ -86,10 +111,11 @@ script = ExtResource("1_yqorp")
 
 [node name="TitleContainer" type="Control" parent="." unique_id=1945523690]
 anchors_preset = 0
-offset_left = -85.0
-offset_top = -75.0
-offset_right = 85.0
-offset_bottom = -28.0
+offset_left = 555.0
+offset_top = 300.0
+offset_right = 725.0
+offset_bottom = 400.0
+pivot_offset = Vector2(85, 25)
 size_flags_vertical = 3
 
 [node name="TextureRect2" type="TextureRect" parent="TitleContainer" unique_id=1046251398]
@@ -121,10 +147,10 @@ expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=451054887]
 layout_mode = 0
-offset_left = -85.0
-offset_top = -25.0
-offset_right = 85.0
-offset_bottom = 125.0
+offset_left = 555.0
+offset_top = 380.0
+offset_right = 725.0
+offset_bottom = 530.0
 
 [node name="Play" type="Button" parent="VBoxContainer" unique_id=1460127540]
 layout_mode = 2
@@ -137,6 +163,5 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Settings"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1983549815]
-root_node = NodePath("../TitleContainer")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1308155251]
 libraries/ = SubResource("AnimationLibrary_l72w3")

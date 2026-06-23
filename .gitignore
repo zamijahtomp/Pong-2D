@@ -1,4 +1,9 @@
 # Godot 4+ specific ignores
+*.tscn
+*.gd
+*.godot
+*.cfg
+*.import
 .godot/
 /android/
 .import/

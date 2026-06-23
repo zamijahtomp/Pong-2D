@@ -4,10 +4,12 @@ extends Control
 #@onready var endless_btn = $VBoxContainer/EndlessButton
 #@onready var coop_btn = $VBoxContainer/TwoPlayerButton
 @onready var settings_btn = $VBoxContainer/Settings
-#
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+
 func _ready() -> void:
 	## Connect the buttons to their respective functions when clicked
 	play.pressed.connect(GlobalManager._on_play_pressed)
+	animation_player.play("rotate")
 	##endless_btn.pressed.connect(_on_endless_pressed)
 	##coop_btn.pressed.connect(_on_twoplayer_pressed)
 	#settings_btn.pressed.connect(_on_settings_pressed)
