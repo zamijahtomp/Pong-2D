@@ -9,3 +9,6 @@
 .import/
 export_presets.cfg
 build/
+assets/
+scenes/
+scripts/
